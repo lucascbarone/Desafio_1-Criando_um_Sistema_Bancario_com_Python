@@ -48,13 +48,16 @@ while opcao != "q":
     elif opcao == "e":
         print("\n===== EXTRATO =====\n")
         
-        print("Depósitos:")
-        for i in range(len(list_dep)):
-            print(f"R${list_dep[i]:.2f}")
-        
-        print("\nSaques:")
-        for j in range(len(list_saq)):
-            print(f"R${list_saq[j]:.2f}")
+        if len(list_dep) == 0 and len(list_saq) == 0:
+            print("Não foram realizadas movimentações")
+        else:
+            print("Depósitos:")
+            for i in range(len(list_dep)):
+                print(f"R${list_dep[i]:.2f}")
+            
+            print("\nSaques:")
+            for j in range(len(list_saq)):
+                print(f"R${list_saq[j]:.2f}")
         
         print(f"\nSaldo atual: R${saldo:.2f}")
         print("================")
