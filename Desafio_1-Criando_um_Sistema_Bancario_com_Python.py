@@ -29,14 +29,14 @@ while opcao != "q":
         list_dep.append(dep)
 
     elif opcao == "s":
-        if numero_saques == 3:
+        if numero_saques == LIMITE_SAQUES:
             print("Limite de saques diários atingido")
         else:
             saq = float(input("Digite quanto deseja sacar:"))
-            while (saq <= 0 or saq > saldo or saq > 500):
+            while (saq <= 0 or saq > saldo or saq > limite):
                 if saq > saldo:
                     saq = float(input("Saldo insuficiente. Digite novo valor:"))
-                elif saq > 500:
+                elif saq > limite:
                     saq = float(input(f"Valor acima do máximo de R${limite}.00 permitido por saque. Digite novo valor:"))
                 else:
                     saq = float(input("Operação Inválida. Digite quanto deseja sacar:"))
